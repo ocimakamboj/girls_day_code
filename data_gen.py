@@ -134,12 +134,18 @@ def curve_sep(N,hor_gap,add_noise=False,sigma=0.01, seed = None):
 
 def get_introductory_example_data():
     X, label = curve_sep(20, hor_gap=0, add_noise=False, sigma=0.08, seed=1)
+    sorted_ind = np.argsort(X[:, 0])
+    X = X[sorted_ind]
+    label = label[sorted_ind]
     test = np.zeros((1, 2), 'float32')
     test[:, 0], test[:, 1] = 0.95, 1.25
     return X, label, test
 
 def get_introductory_example_data_knn():
     X, label = curve_sep(20, hor_gap=0, add_noise=False, sigma=0.08, seed=1)
+    sorted_ind = np.argsort(X[:, 0])
+    X = X[sorted_ind]
+    label = label[sorted_ind]
     test = np.zeros((1, 2), 'float32')
     test[:, 0], test[:, 1] = 1.1, 1.25
     return X, label, test
