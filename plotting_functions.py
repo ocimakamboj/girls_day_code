@@ -124,8 +124,8 @@ def plot_accuracy(acc_list, n, smooth_factor = 0.8):
             smoothed_val = (1 - alpha) * acc_list[i] + alpha * last
             last = smoothed_val
             smoothed_acc.append(smoothed_val)
-        plt.plot(n, acc_list, c='C0')
-        plt.plot(n, smoothed_acc, c='C0', alpha=0.4)
+        plt.plot(n, acc_list, c='C0', alpha=0.4)
+        plt.plot(n, smoothed_acc, c='C0')
         plt.xlabel("No. of neighbours")
         plt.ylabel("Accuracy")
         plt.show()
